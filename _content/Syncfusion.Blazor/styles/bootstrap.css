@@ -28978,25 +28978,27 @@ ejs-sidebar {
   display: none;
 }
 
-.e-ddt.e-input-group.e-control-wrapper.e-show-chip .e-clear-icon, .e-ddt.e-float-input.e-control-wrapper.e-show-chip .e-clear-icon {
+.e-ddt.e-input-group.e-control-wrapper.e-show-chip .e-clear-icon, .e-ddt.e-input-group.e-control-wrapper.e-show-text .e-clear-icon, .e-ddt.e-float-input.e-control-wrapper.e-show-chip .e-clear-icon, .e-ddt.e-float-input.e-control-wrapper.e-show-text .e-clear-icon {
   bottom: 0;
   position: absolute;
   right: 0;
 }
 
-.e-ddt.e-input-group.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon, .e-ddt.e-float-input.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon {
+.e-ddt.e-input-group.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon, .e-ddt.e-input-group.e-control-wrapper.e-show-text.e-show-dd-icon .e-clear-icon, .e-ddt.e-float-input.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon, .e-ddt.e-float-input.e-control-wrapper.e-show-text.e-show-dd-icon .e-clear-icon {
   right: 32px;
 }
 
-.e-ddt.e-input-group.e-control-wrapper.e-show-chip .e-ddt-icon, .e-ddt.e-float-input.e-control-wrapper.e-show-chip .e-ddt-icon {
+.e-ddt.e-input-group.e-control-wrapper.e-show-chip .e-ddt-icon, .e-ddt.e-input-group.e-control-wrapper.e-show-text .e-ddt-icon, .e-ddt.e-float-input.e-control-wrapper.e-show-chip .e-ddt-icon, .e-ddt.e-float-input.e-control-wrapper.e-show-text .e-ddt-icon {
   bottom: 0;
   position: absolute;
   right: 0;
 }
 
 .e-ddt.e-input-group.e-control-wrapper.e-show-chip.e-input-focus input.e-dropdowntree.e-chip-input,
-.e-ddt.e-input-group.e-control-wrapper.e-show-chip input.e-dropdowntree.e-chip-input, .e-ddt.e-float-input.e-control-wrapper.e-show-chip.e-input-focus input.e-dropdowntree.e-chip-input,
-.e-ddt.e-float-input.e-control-wrapper.e-show-chip input.e-dropdowntree.e-chip-input {
+.e-ddt.e-input-group.e-control-wrapper.e-show-chip input.e-dropdowntree.e-chip-input, .e-ddt.e-input-group.e-control-wrapper.e-show-text.e-input-focus input.e-dropdowntree.e-chip-input,
+.e-ddt.e-input-group.e-control-wrapper.e-show-text input.e-dropdowntree.e-chip-input, .e-ddt.e-float-input.e-control-wrapper.e-show-chip.e-input-focus input.e-dropdowntree.e-chip-input,
+.e-ddt.e-float-input.e-control-wrapper.e-show-chip input.e-dropdowntree.e-chip-input, .e-ddt.e-float-input.e-control-wrapper.e-show-text.e-input-focus input.e-dropdowntree.e-chip-input,
+.e-ddt.e-float-input.e-control-wrapper.e-show-text input.e-dropdowntree.e-chip-input {
   padding-left: 0;
   padding-right: 0;
 }
@@ -29005,19 +29007,19 @@ ejs-sidebar {
   width: 100%;
 }
 
-.e-ddt .e-chips-wrapper .e-chips-close {
+.e-ddt.e-show-chip .e-chips-close {
   line-height: 24px;
   min-height: 28px;
   min-width: 30px;
   text-align: center;
 }
 
-.e-ddt .e-chips-wrapper .e-chips-close::before {
+.e-ddt.e-show-chip .e-chips-close::before {
   font-size: 10px;
   vertical-align: middle;
 }
 
-.e-ddt .e-chips-wrapper .e-chips {
+.e-ddt.e-show-chip .e-chips {
   -ms-flex-align: center;
       align-items: center;
   border-radius: 4px;
@@ -29034,13 +29036,51 @@ ejs-sidebar {
   white-space: nowrap;
 }
 
-.e-ddt .e-chips-wrapper .e-chips > .e-chipcontent {
+.e-ddt.e-show-chip .e-chips > .e-chipcontent {
   max-width: 100%;
   overflow: hidden;
   padding: 0 10px 0 10px;
   text-indent: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.e-ddt .e-overflow {
+  white-space: nowrap;
+}
+
+.e-ddt .e-overflow.e-show-text {
+  padding: 6px 12px 0 12px;
+}
+
+.e-ddt .e-overflow.e-total-count {
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.e-ddt .e-overflow.e-total-count .e-remain {
+  padding: 0 10px 0 0;
+}
+
+.e-ddt .e-overflow.e-wrap-count {
+  padding-top: 5.5px;
+}
+
+.e-ddt .e-overflow .e-remain {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  padding: 0 0 0 10px;
+}
+
+.e-ddt .e-overflow .e-remain.e-wrap-count {
+  padding-top: 6px;
+}
+
+.e-ddt.e-show-chip .e-overflow.e-total-count .e-remain {
+  padding: 6px 12px 0 12px;
 }
 
 .e-ddt.e-show-dd-icon .e-chips-wrapper .e-chips:last-child {
@@ -29181,8 +29221,29 @@ ejs-sidebar {
   cursor: default;
 }
 
-.e-ddt.e-rtl .e-chips-wrapper .e-chips {
+.e-ddt.e-rtl.e-show-chip .e-chips {
   float: right;
+}
+
+.e-ddt.e-rtl.e-show-chip .e-overflow .e-remain, .e-ddt.e-rtl.e-show-text .e-overflow .e-remain {
+  padding: 0 10px 0 0;
+}
+
+.e-ddt.e-rtl.e-show-chip .e-overflow .e-remain.e-wrap-count, .e-ddt.e-rtl.e-show-text .e-overflow .e-remain.e-wrap-count {
+  padding-top: 5.5px;
+}
+
+.e-ddt.e-rtl.e-show-chip .e-overflow.e-wrap-count, .e-ddt.e-rtl.e-show-text .e-overflow.e-wrap-count {
+  position: absolute;
+  right: auto;
+}
+
+.e-ddt.e-rtl.e-show-text .e-overflow.e-total-count .e-remain {
+  padding: 0 0 0 10px;
+}
+
+.e-ddt.e-rtl.e-show-chip .e-overflow.e-total-count .e-remain {
+  padding: 6px 12px 0 12px;
 }
 
 .e-ddt.e-rtl.e-show-dd-icon .e-chips-wrapper .e-chips:last-child {
@@ -29201,13 +29262,15 @@ ejs-sidebar {
 }
 
 .e-ddt.e-rtl.e-input-group.e-control-wrapper.e-show-chip .e-clear-icon,
-.e-ddt.e-rtl.e-input-group.e-control-wrapper.e-show-chip .e-ddt-icon, .e-ddt.e-rtl.e-float-input.e-control-wrapper.e-show-chip .e-clear-icon,
-.e-ddt.e-rtl.e-float-input.e-control-wrapper.e-show-chip .e-ddt-icon {
+.e-ddt.e-rtl.e-input-group.e-control-wrapper.e-show-chip .e-ddt-icon, .e-ddt.e-rtl.e-input-group.e-control-wrapper.e-show-text .e-clear-icon,
+.e-ddt.e-rtl.e-input-group.e-control-wrapper.e-show-text .e-ddt-icon, .e-ddt.e-rtl.e-float-input.e-control-wrapper.e-show-chip .e-clear-icon,
+.e-ddt.e-rtl.e-float-input.e-control-wrapper.e-show-chip .e-ddt-icon, .e-ddt.e-rtl.e-float-input.e-control-wrapper.e-show-text .e-clear-icon,
+.e-ddt.e-rtl.e-float-input.e-control-wrapper.e-show-text .e-ddt-icon {
   left: 0;
   right: auto;
 }
 
-.e-ddt.e-rtl.e-input-group.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon, .e-ddt.e-rtl.e-float-input.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon {
+.e-ddt.e-rtl.e-input-group.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon, .e-ddt.e-rtl.e-input-group.e-control-wrapper.e-show-text.e-show-dd-icon .e-clear-icon, .e-ddt.e-rtl.e-float-input.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon, .e-ddt.e-rtl.e-float-input.e-control-wrapper.e-show-text.e-show-dd-icon .e-clear-icon {
   left: 32px;
 }
 
@@ -29220,15 +29283,19 @@ ejs-sidebar {
   height: 34px;
 }
 
-.e-bigger .e-ddt.e-input-group.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon, .e-bigger .e-ddt.e-float-input.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon,
+.e-bigger .e-ddt.e-input-group.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon, .e-bigger .e-ddt.e-input-group.e-control-wrapper.e-show-text.e-show-dd-icon .e-clear-icon, .e-bigger .e-ddt.e-float-input.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon, .e-bigger .e-ddt.e-float-input.e-control-wrapper.e-show-text.e-show-dd-icon .e-clear-icon,
 .e-ddt.e-bigger.e-input-group.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon,
-.e-ddt.e-bigger.e-float-input.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon {
+.e-ddt.e-bigger.e-input-group.e-control-wrapper.e-show-text.e-show-dd-icon .e-clear-icon,
+.e-ddt.e-bigger.e-float-input.e-control-wrapper.e-show-chip.e-show-dd-icon .e-clear-icon,
+.e-ddt.e-bigger.e-float-input.e-control-wrapper.e-show-text.e-show-dd-icon .e-clear-icon {
   right: 38px;
 }
 
-.e-bigger .e-ddt.e-input-group.e-control-wrapper.e-show-chip .e-ddt-icon, .e-bigger .e-ddt.e-float-input.e-control-wrapper.e-show-chip .e-ddt-icon,
+.e-bigger .e-ddt.e-input-group.e-control-wrapper.e-show-chip .e-ddt-icon, .e-bigger .e-ddt.e-input-group.e-control-wrapper.e-show-text .e-ddt-icon, .e-bigger .e-ddt.e-float-input.e-control-wrapper.e-show-chip .e-ddt-icon, .e-bigger .e-ddt.e-float-input.e-control-wrapper.e-show-text .e-ddt-icon,
 .e-ddt.e-bigger.e-input-group.e-control-wrapper.e-show-chip .e-ddt-icon,
-.e-ddt.e-bigger.e-float-input.e-control-wrapper.e-show-chip .e-ddt-icon {
+.e-ddt.e-bigger.e-input-group.e-control-wrapper.e-show-text .e-ddt-icon,
+.e-ddt.e-bigger.e-float-input.e-control-wrapper.e-show-chip .e-ddt-icon,
+.e-ddt.e-bigger.e-float-input.e-control-wrapper.e-show-text .e-ddt-icon {
   bottom: 0;
 }
 
@@ -29236,6 +29303,11 @@ ejs-sidebar {
 .e-ddt.e-bigger.e-input-group.e-control-wrapper .e-clear-icon,
 .e-ddt.e-bigger.e-float-input.e-control-wrapper .e-clear-icon {
   min-height: 38px;
+}
+
+.e-bigger .e-ddt .e-overflow.e-show-text,
+.e-ddt.e-bigger .e-overflow.e-show-text {
+  padding: 7.5px 14px 0 14px;
 }
 
 .e-bigger .e-ddt.e-show-dd-icon .e-chips-wrapper .e-chips:last-child,
@@ -29284,8 +29356,9 @@ ejs-sidebar {
   margin-right: 1px;
 }
 
-.e-bigger .e-ddt.e-rtl.e-show-chip.e-input-group.e-show-dd-icon .e-clear-icon,
-.e-ddt.e-bigger.e-rtl.e-show-chip.e-input-group.e-show-dd-icon .e-clear-icon {
+.e-bigger .e-ddt.e-rtl.e-show-chip.e-input-group.e-show-dd-icon .e-clear-icon, .e-bigger .e-ddt.e-rtl.e-show-text.e-input-group.e-show-dd-icon .e-clear-icon,
+.e-ddt.e-bigger.e-rtl.e-show-chip.e-input-group.e-show-dd-icon .e-clear-icon,
+.e-ddt.e-bigger.e-rtl.e-show-text.e-input-group.e-show-dd-icon .e-clear-icon {
   left: 38px;
   right: auto;
 }
@@ -29308,6 +29381,10 @@ ejs-sidebar {
 
 .e-ddt .e-chips:hover > .e-chipcontent {
   color: #333;
+}
+
+.e-ddt .e-overflow .e-remain {
+  color: #888;
 }
 
 .e-ddt.e-input-group.e-control-wrapper .e-clear-icon, .e-ddt.e-float-input.e-control-wrapper .e-clear-icon {
@@ -29615,7 +29692,7 @@ ejs-sidebar {
 .e-multi-select-wrapper .e-delim-values {
   font-family: inherit;
   font-size: 14px;
-  line-height: 35px;
+  line-height: 32px;
   max-width: 100%;
   padding-left: 6px;
   padding-right: 6px;
@@ -29623,7 +29700,7 @@ ejs-sidebar {
 }
 
 .e-bigger .e-multi-select-wrapper .e-delim-values {
-  line-height: 39px;
+  line-height: 36px;
 }
 
 .e-multi-select-list-wrapper .e-hide-listitem {
@@ -29887,7 +29964,7 @@ ejs-sidebar {
 }
 
 .e-bigger .e-checkbox .e-multi-select-wrapper .e-delim-values {
-  line-height: 39px;
+  line-height: 36px;
 }
 
 .e-checkbox .e-multi-select-wrapper .e-delim-values .e-remain {
@@ -29931,13 +30008,13 @@ ejs-multiselect {
 }
 
 .e-small .e-multi-select-wrapper input[type='text'] {
-  height: 28px;
-  min-height: 28px;
+  height: 26px;
+  min-height: 26px;
 }
 
 .e-small .e-multi-select-wrapper .e-delim-values {
   font-size: 13px;
-  line-height: 28px;
+  line-height: 26px;
 }
 
 .e-small .e-multi-select-wrapper .e-chips-close.e-close-hooker {
@@ -29958,13 +30035,13 @@ ejs-multiselect {
 }
 
 .e-bigger.e-small .e-multi-select-wrapper input[type='text'] {
-  height: 35px;
-  min-height: 35px;
+  height: 34px;
+  min-height: 34px;
 }
 
 .e-small.e-bigger .e-multi-select-wrapper .e-delim-values {
   font-size: 14px;
-  line-height: 35px;
+  line-height: 34px;
 }
 
 .e-bigger.e-small .e-multi-select-wrapper .e-chips-close.e-close-hooker {
@@ -30010,6 +30087,7 @@ ejs-multiselect {
 }
 
 .e-multi-select-wrapper .e-chips > .e-chipcontent {
+  -webkit-text-fill-color: #333;
   color: #333;
   font-family: inherit;
   font-size: 15px;
@@ -30026,7 +30104,7 @@ ejs-multiselect {
 .e-multi-select-wrapper .e-chips {
   background-color: #e6e6e6;
   border-radius: 4px;
-  height: 30px;
+  height: 28px;
 }
 
 .e-multi-select-wrapper .e-chips:hover {
@@ -30038,6 +30116,7 @@ ejs-multiselect {
 }
 
 .e-multi-select-wrapper .e-chips .e-chips-close::before {
+  -webkit-text-fill-color: #333;
   color: #333;
   font-size: 10px;
 }
@@ -30160,6 +30239,7 @@ ejs-multiselect {
 }
 
 .e-multi-select-wrapper .e-delim-values {
+  -webkit-text-fill-color: #333;
   color: #333;
 }
 
@@ -30168,7 +30248,7 @@ ejs-multiselect {
 }
 
 .e-small .e-multi-select-wrapper .e-chips {
-  height: 24px;
+  height: 22px;
 }
 
 .e-small .e-multi-select-wrapper .e-chips > .e-chipcontent {
@@ -30184,7 +30264,7 @@ ejs-multiselect {
 }
 
 .e-bigger.e-small .e-multi-select-wrapper .e-chips {
-  height: 30px;
+  height: 28px;
 }
 
 .e-bigger.e-small .e-multi-select-wrapper .e-chips > .e-chipcontent {
@@ -31645,6 +31725,34 @@ ejs-listbox {
   width: 100%;
 }
 
+.e-de-cmt-avatar {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+}
+
+.e-de-ff-cmt-avatar {
+  -ms-flex-align: center;
+      align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+  height: 24px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  letter-spacing: 0;
+  line-height: 12px;
+  opacity: 100%;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 24px;
+}
+
 .e-de-ff-drpdwn-listview {
   margin-right: 12px;
   width: 100%;
@@ -31653,6 +31761,23 @@ ejs-listbox {
 .e-de-ff-drpdwn-listview.e-de-rtl {
   margin-left: 12px;
   margin-right: 0;
+}
+
+.e-de-cmt-selection-reply.e-de-cmt-sub-container.e-de-cmt-reply {
+  border-left: 4px solid #317ab9;
+  margin-left: -6px;
+  padding-left: 10px;
+}
+
+.e-de-ff-userlist-listview {
+  border: 1px solid #e4e4e4;
+  border-radius: 2px;
+  display: none;
+  max-height: 150px;
+  max-width: 387px;
+  overflow-y: scroll;
+  position: absolute;
+  z-index: 1;
 }
 
 .e-de-ff-drpdwn-mvup {
@@ -33767,7 +33892,6 @@ label[for*='_wholeWord_e-de-rtl'] {
 
 .e-de-cmt-pane {
   background-color: inherit;
-  border-left: 1px solid #e6e6e6;
   color: #333;
 }
 
@@ -33866,6 +33990,17 @@ label[for*='_wholeWord_e-de-rtl'] {
   font-weight: normal;
 }
 
+.e-tc-btn-bg-clr.e-btn:not(:hover):not(.e-active) {
+  background-color: inherit;
+  border-color: transparent;
+  color: inherit;
+}
+
+.e-tc-nvgte.e-icon-btn {
+  text-align: center;
+  vertical-align: middle;
+}
+
 .e-de-track-span-user {
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -33884,8 +34019,8 @@ label[for*='_wholeWord_e-de-rtl'] {
   border-color: #4D841E;
   background-color: transparent;
   color: #4D841E;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 5px 4px;
+  text-transform: initial;
   width: 66px;
 }
 
@@ -33893,8 +34028,8 @@ label[for*='_wholeWord_e-de-rtl'] {
   border-color: transparent;
   background-color: #4D841E;
   color: #fff;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 5px 4px;
+  text-transform: initial;
   width: 66px;
 }
 
@@ -33902,9 +34037,9 @@ label[for*='_wholeWord_e-de-rtl'] {
   border-color: #D74113;
   background-color: transparent;
   color: #D74113;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: 5px 6px;
   margin-left: 8px;
+  text-transform: initial;
   width: 64px;
 }
 
@@ -33912,9 +34047,9 @@ label[for*='_wholeWord_e-de-rtl'] {
   border-color: transparent;
   background-color: #D74113;
   color: #fff;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: 5px 6px;
   margin-left: 8px;
+  text-transform: initial;
   width: 64px;
 }
 
@@ -33929,31 +34064,28 @@ label[for*='_wholeWord_e-de-rtl'] {
 .e-de-track-insert {
   color: #4D841E;
   font-size: 13px;
-  font-weight: 500;
   opacity: 100%;
 }
 
 .e-de-track-delete {
   color: #D74113;
   font-size: 13px;
-  font-weight: 500;
   opacity: 100%;
 }
 
 .e-de-track-toolbar {
   border-bottom: 1px solid #D8D8D8;
   border-top: 1px solid #D8D8D8;
+  padding-bottom: 5px;
 }
 
 .e-de-track-date {
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 4px;
-  opacity: .87;
+  opacity: .67;
 }
 
 .e-de-track-usernme-div {
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
   padding-top: 8px;
@@ -33962,6 +34094,7 @@ label[for*='_wholeWord_e-de-rtl'] {
 .e-de-track-user-nme {
   font-size: 13px;
   font-weight: 500;
+  padding-left: 8px;
 }
 
 .e-de-track-chngs-text {
@@ -33994,6 +34127,11 @@ label[for*='_wholeWord_e-de-rtl'] {
   width: 50px;
 }
 
+.e-de-tc-field {
+  background-color: #cecdcd;
+  margin: 0 2px;
+}
+
 .e-de-tc-pmark {
   font-size: 14px;
   font-family: Roboto-Regular;
@@ -34008,12 +34146,15 @@ label[for*='_wholeWord_e-de-rtl'] {
 }
 
 .e-de-cmt-author {
+  -ms-flex-align: center;
+      align-items: center;
   margin-bottom: 8px;
 }
 
 .e-de-cmt-author-name {
   font-size: 13px;
   font-weight: 500;
+  padding-left: 8px;
   width: 90%;
 }
 
@@ -34052,8 +34193,9 @@ label[for*='_wholeWord_e-de-rtl'] {
   border: none;
   border-top: 1px solid #ccc;
   border-radius: 0px;
-  margin: 11.5px 8px 0px 8px;
+  margin: 11.5px 8px 0px 0px;
   padding: 0px;
+  padding-left: 8px;
 }
 
 .e-de-cmt-sub-container.e-de-cmt-reply .e-de-cmt-view {
@@ -35044,6 +35186,7 @@ label[for*='_wholeWord_e-de-rtl'] {
 }
 
 .e-de-review-pane {
+  border-left: 1px solid #e6e6e6;
   height: 100%;
   min-height: 200px;
   overflow: auto;
@@ -46080,6 +46223,11 @@ ejs-filemanager {
   cursor: nwse-resize;
   right: 0;
   z-index: 100;
+}
+
+.e-richtexteditor.e-rte-tb-expand.e-rte-fixed-tb-expand {
+  overflow: hidden;
+  transition: none;
 }
 
 .e-rte-linkcontent .e-rte-label {
@@ -65531,12 +65679,12 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 
 .e-device .e-recurrenceeditor .e-form-left,
 .e-device .e-recurrenceeditor .e-input-wrapper-side.e-form-left {
-  padding: 0 0 10px;
+  padding: 0 3px 10px 0;
 }
 
 .e-device .e-recurrenceeditor .e-form-right,
 .e-device .e-recurrenceeditor .e-input-wrapper-side.e-form-right {
-  padding: 0 0 10px;
+  padding: 0 0 10px 3px;
 }
 
 .e-device .e-recurrenceeditor .e-input-wrapper.e-end-on-date,
@@ -66211,8 +66359,8 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-timeline-week .e-icon-timeline-week,
 .e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-timeline-work-week .e-icon-timeline-workweek,
 .e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-timeline-month .e-icon-timeline-month,
-.e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-timeline-year-vertical .e-icon-timeline-year-vertical,
-.e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-timeline-year-horizontal .e-icon-timeline-year-horizontal,
+.e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-timeline-year .e-icon-timeline-year-vertical,
+.e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-timeline-year .e-icon-timeline-year-horizontal,
 .e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-add .e-tbar-btn-text,
 .e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-today .e-icon-day,
 .e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-today .e-icon-today + .e-tbar-btn-text {
@@ -66545,9 +66693,14 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   display: none;
 }
 
+.e-schedule .e-appointment .e-inline-appointment {
+  z-index: 1;
+}
+
 .e-schedule .e-appointment .e-inline-subject {
   background-color: transparent;
   border: 0;
+  color: #fff;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.2;
@@ -67312,6 +67465,10 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   margin-top: -20px;
 }
 
+.e-schedule .e-month-view .e-inline-appointment {
+  z-index: 1;
+}
+
 .e-schedule .e-month-view .e-appointment {
   background: #317ab9;
   border: 1px solid #c6ddf0;
@@ -67419,6 +67576,7 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   -ms-flex: 0 25%;
       flex: 0 25%;
   max-width: 100%;
+  min-width: 260px;
   padding: 10px;
 }
 
@@ -67706,6 +67864,10 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   position: absolute;
 }
 
+.e-schedule .e-timeline-year-view .e-event-table .e-inline-appointment {
+  z-index: 1;
+}
+
 .e-schedule .e-timeline-year-view .e-event-table .e-appointment {
   background: #317ab9;
   border: 1px solid #c6ddf0;
@@ -67952,6 +68114,11 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
   position: absolute;
 }
 
+.e-schedule .e-timeline-view .e-inline-appointment,
+.e-schedule .e-timeline-month-view .e-inline-appointment {
+  z-index: 1;
+}
+
 .e-schedule .e-timeline-view .e-appointment,
 .e-schedule .e-timeline-month-view .e-appointment {
   background: #317ab9;
@@ -68105,6 +68272,11 @@ div > .e-pv-bookmark-icon.e-pv-icon.e-right {
 .e-schedule.e-rtl .e-timeline-month-view .e-appointment .e-left-icon,
 .e-schedule.e-rtl .e-timeline-month-view .e-appointment .e-right-icon {
   padding: 0 0 0 5px;
+}
+
+.e-schedule.e-rtl .e-timeline-view .e-inline-appointment,
+.e-schedule.e-rtl .e-timeline-month-view .e-inline-appointment {
+  z-index: 1;
 }
 
 .e-schedule.e-rtl .e-timeline-view .e-resource-left-td,
